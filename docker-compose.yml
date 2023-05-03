@@ -26,6 +26,8 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+
   couchdb:
     image: couchdb:latest
     restart: always
@@ -40,7 +42,6 @@ services:
     volumes:
       - couchdb_data:/opt/couchdb/data
 
- 
 
 # The docker networks
 networks:
@@ -54,4 +55,3 @@ volumes:
   couchdb_data:
     driver: "local"
     name: ${COUCHDB_CONTAINER_NAME:-couchdb}_data  
-
